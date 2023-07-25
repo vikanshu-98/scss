@@ -1,0 +1,39 @@
+@import "mixin";
+@import "variable";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+.parent_div_block{
+ 
+    @include div-row;
+    // nesting
+    & h2{
+        color: $heading-color;
+        @include backgroudColor(red);
+        // operator
+        font-size: 4rem  + 2rem;
+        &:hover{
+            color: bisque
+        }
+    }
+    & p{
+        @include backgroudColor(green);
+        color: $para-color;
+        &:hover{
+            color: red;
+        }
+    }
+
+}
+
+// .parent_div_block h2{
+//     color: $heading-color;
+// }
+
+// .parent_div_block p{
+//     color: $para-color;
+// }
